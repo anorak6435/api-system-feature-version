@@ -46,7 +46,7 @@ app.use(bodyParser.json())
 // CREATE
 app.post('/feature', (req, res) => {
     FeatureModel.create(req.body);
-    res.status(200).send("OK")
+    res.status(200).json({'resp': 'OK'})
 });
 
 
@@ -108,7 +108,7 @@ app.delete('/feature/:id', async (req, res) => {
   } = req;
   console.log("DELETING NOW!")
   FeatureModel.deleteOne({_id: id}).exec();
-  res.status(200).send("OK")
+  res.status(200).json({'resp': 'OK'})
 });
 
 // ---------------------
@@ -118,7 +118,7 @@ app.delete('/feature/:id', async (req, res) => {
 // ---------------------
 app.post('/system', (req, res) => {
     SystemModel.create(req.body);
-    res.status(200).send("OK")
+    res.status(200).json({'resp': 'OK'})
 });
 
 // READ
@@ -178,7 +178,7 @@ app.delete('/system/:id', async (req, res) => {
   } = req;
   console.log("DELETING NOW!")
   SystemModel.deleteOne({_id: id}).exec();
-  res.status(200).send("OK")
+  res.status(200).json({'resp': 'OK'})
 });
 
 
@@ -188,7 +188,7 @@ app.delete('/system/:id', async (req, res) => {
 // ---------------------
 app.post('/version', (req, res) => {
     VersionModel.create(req.body);
-    res.status(200).send("OK")
+    res.status(200).json({'resp': 'OK'})
 });
 
 // READ
@@ -248,7 +248,7 @@ app.delete('/version/:id', async (req, res) => {
   } = req;
   console.log("DELETING NOW!")
   VersionModel.deleteOne({_id: id}).exec();
-  res.status(200).send("OK")
+  res.status(200).json({'resp': 'OK'})
 });
 // ---------------------
 
