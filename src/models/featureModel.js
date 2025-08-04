@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const FeatureSchema = mongoose.Schema({
     name: String,
     code: String,
+    lang: String,
     is_active : Boolean
 });
 
